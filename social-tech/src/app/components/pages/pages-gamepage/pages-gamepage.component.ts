@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesGamepageComponent implements OnInit {
 
+  wallet: String = 'R60';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  buyFunction() {}
+  dontBuyFunction() {}
 }
