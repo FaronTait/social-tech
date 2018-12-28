@@ -14,6 +14,7 @@ export class Backend {
     makeDecision(decision: boolean) {
         this.m_itemListIndex += 1;
         if (this.m_itemListIndex >= this.m_itemList.length) {
+            //TODO: Decide what the best behavior would be for when the end of a the item list is reached
             console.log("The end of the item list has been reached");
             return null
         }
