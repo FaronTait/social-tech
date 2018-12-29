@@ -3,7 +3,7 @@ import { Decision } from "../SharedClasses/Decision";
 import {SessionDataObject} from "../SessionDataObject/SessionDataObject";
 
 export class Backend {
-    private m_sessionData: SessionDataObject;
+    private m_sessionDataObject: SessionDataObject;
 
     private m_walletValue: number;
     private m_itemList: Item[];
@@ -28,7 +28,7 @@ export class Backend {
         }
 
         let decisionObject = new Decision(newItem, decision, this.m_walletValue);
-        this.m_sessionData.addDecision(decisionObject);
+        this.m_sessionDataObject.addDecision(decisionObject);
 
         return {newWalletValue: this.m_walletValue, newItem: newItem}
     }

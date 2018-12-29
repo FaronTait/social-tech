@@ -14,10 +14,10 @@ export class SessionDataObject {
     }
 
     getDecisionList(): Decision[] {
-        return(this.m_decisionList);
+        return (this.m_decisionList);
     }
 
     getJSON(): string {
-        return(JSON.stringify(this));
+        return (JSON.stringify(this));
     }
 }
