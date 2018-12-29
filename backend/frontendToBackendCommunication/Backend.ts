@@ -1,6 +1,7 @@
 import {Item} from "../SharedClasses/Item";
 import { Decision } from "../SharedClasses/Decision";
 import {SessionDataObject} from "../SessionDataObject/SessionDataObject";
+import { PlayerInfo } from "../SharedClasses/PlayerInfo";
 
 export class Backend {
     private m_sessionDataObject: SessionDataObject;
@@ -31,6 +32,14 @@ export class Backend {
         this.m_sessionDataObject.addDecision(decisionObject);
 
         return {newWalletValue: this.m_walletValue, newItem: newItem}
+    }
+
+    getSessionDecisions(): Decision[] {
+        return this.m_sessionDataObject.getDecisionList();
+    }
+
+    sendBasicPlayerInfo(playerInfo: PlayerInfo): void {
+        this.m_sessionDataObject.addPlayerInfo(playerInfo);
     }
 
     getStartingInfo() {
