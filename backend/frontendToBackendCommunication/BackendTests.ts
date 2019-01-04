@@ -7,7 +7,9 @@ for (let i = 0; i < 10; i++) {
     itemArray[i] = new Item("I is Item " + i.toString(), 10 + i * 10)
 }
 
- let testBackend = new Backend(1000, itemArray);
+ let testBackend = Backend.getInstance();
+testBackend.setWalletValue(1000);
+testBackend.setItemArray(itemArray);
 
  let newInfo = testBackend.getStartingInfo();
  for (let i = 0; i < 9; i++) {

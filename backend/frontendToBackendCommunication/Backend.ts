@@ -5,16 +5,31 @@ import { PlayerInfo } from "../SharedClasses/PlayerInfo";
 
 export class Backend {
     private m_sessionDataObject: SessionDataObject;
-
     private m_walletValue: number;
     private m_itemList: Item[];
     private m_itemListIndex: number;
 
-    constructor(walletValue: number, itemList: Item[]) {
-        this.m_walletValue = walletValue;
-        this.m_itemListIndex = 0;
-        this.m_itemList = itemList;
+    private static m_instance: Backend = null;
+
+    private constructor() {
         this.m_sessionDataObject = new SessionDataObject();
+        this.m_itemListIndex = 0;
+    }
+
+    static getInstance(): Backend {
+        if (Backend.m_instance == null) {
+            Backend.m_instance = new Backend()
+        }
+        return Backend.m_instance;
+    }
+
+    setItemArray(items: Item[]) {
+        this.m_itemList = items;
+        this.m_itemListIndex = 0;
+    }
+
+    setWalletValue(walletValue: number) {
+        this.m_walletValue = walletValue;
     }
 
     makeDecision(decision: boolean) {
