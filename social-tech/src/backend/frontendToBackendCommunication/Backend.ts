@@ -5,19 +5,39 @@ import { PlayerInfo } from "../SharedClasses/PlayerInfo";
 
 export class Backend {
     private m_sessionDataObject: SessionDataObject;
-
     private m_walletValue: number;
     private m_itemList: Item[];
     private m_itemListIndex: number;
 
-    constructor(walletValue: number, itemList: Item[]) {
-        this.m_walletValue = walletValue;
-        this.m_itemListIndex = 0;
-        this.m_itemList = itemList;
+    private static m_instance: Backend = null;
+
+    private constructor() {
         this.m_sessionDataObject = new SessionDataObject();
+        this.m_itemListIndex = 0;
+    }
+
+    static getInstance(): Backend {
+        if (Backend.m_instance == null) {
+            Backend.m_instance = new Backend()
+        }
+        return Backend.m_instance;
+    }
+
+    setItemArray(items: Item[]) {
+        this.m_itemList = items;
+        this.m_itemListIndex = 0;
+    }
+
+    setWalletValue(walletValue: number) {
+        this.m_walletValue = walletValue;
     }
 
     makeDecision(decision: boolean) {
+        if (this.m_itemListIndex < this.m_itemList.length) {
+            let decisionObject = new Decision(this.m_itemList[this.m_itemListIndex], decision, this.m_walletValue);
+            this.m_sessionDataObject.addDecision(decisionObject);
+        }
+
         this.m_itemListIndex += 1;
         if (this.m_itemListIndex >= this.m_itemList.length) {
             //TODO: Decide what the best behavior would be for when the end of a the item list is reached
@@ -28,9 +48,6 @@ export class Backend {
         if (decision) {
             this.m_walletValue -= newItem.value;
         }
-
-        let decisionObject = new Decision(newItem, decision, this.m_walletValue);
-        this.m_sessionDataObject.addDecision(decisionObject);
 
         return {newWalletValue: this.m_walletValue, newItem: newItem}
     }
@@ -45,9 +62,5 @@ export class Backend {
 
     getStartingInfo() {
         return {newWalletValue: this.m_walletValue, newItem: this.m_itemList[0]}
-    }
-
-    saveToDataBase(): void {
-
     }
 }

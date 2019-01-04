@@ -1,4 +1,4 @@
-import {Item} from "./Item";
+import {Item} from "../SharedClasses/Item";
 
 // This object was created according to the flowchart
 
