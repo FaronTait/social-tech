@@ -1,0 +1,15 @@
+.start-button1 {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 42%;
+  margin-top: 450px;
+}
+
+.start-button2 {
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 42%;
+  margin-top: 450px;
+}
