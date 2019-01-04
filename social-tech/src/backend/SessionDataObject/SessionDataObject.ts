@@ -3,7 +3,7 @@ import {Decision} from "../SharedClasses/Decision";
 
 export class SessionDataObject {
     private m_playerInfo: PlayerInfo;
-    private m_decisionList: Decision[];
+    private m_decisionList: Decision[] = [];
 
     addPlayerInfo(playerInfo: PlayerInfo): void {
         this.m_playerInfo = playerInfo;
@@ -18,7 +18,6 @@ export class SessionDataObject {
     }
 
     getJSON(): string {
-        console.log(JSON.stringify(this));
         return (JSON.stringify(this));
     }
 }

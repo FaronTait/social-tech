@@ -14,6 +14,7 @@ export class Backend {
         this.m_walletValue = walletValue;
         this.m_itemListIndex = 0;
         this.m_itemList = itemList;
+        this.m_sessionDataObject = new SessionDataObject();
     }
 
     makeDecision(decision: boolean) {
