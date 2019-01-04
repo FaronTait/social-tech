@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Backend} from "../../../../backend/frontendToBackendCommunication/Backend";
+import {Item} from "../../../../backend/SharedClasses/Item";
 
 @Component({
   selector: 'app-pages-gamepage',
@@ -7,14 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesGamepageComponent implements OnInit {
 
-  wallet: String = 'R60';
+  walletValue: number;
+  wallet: String;
+  currentItem: Item;
+  backend: Backend;
 
-  constructor() { }
+  constructor() {
+    this.walletValue = 1000;
+    let itemArray: Item[] = [];
+
+    for (let i = 0; i < 10; i++) {
+      itemArray[i] = new Item("I is Item " + i.toString(), 10 + i * 10, "temp-id")
+    }
+
+    this.backend = new Backend(this.walletValue, itemArray);
+    this.currentItem = this.backend.getStartingInfo().newItem;
+    this.wallet = 'R' + this.walletValue;
+  }
 
   ngOnInit() {
   }
 
 
-  buyFunction() {}
-  dontBuyFunction() {}
+  buyFunction() {
+    let newInfo = this.backend.makeDecision(true);
+    this.walletValue = newInfo.newWalletValue;
+    this.currentItem = newInfo.newItem;
+    this.wallet = 'R' + this.walletValue;
+  }
+
+  dontBuyFunction() {
+    let newInfo = this.backend.makeDecision(false);
+    this.currentItem = newInfo.newItem;
+  }
 }
