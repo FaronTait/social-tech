@@ -22,7 +22,9 @@ export class PagesGamepageComponent implements OnInit {
       itemArray[i] = new Item("I is Item " + i.toString(), 10 + i * 10, "temp-id")
     }
 
-    this.backend = new Backend(this.walletValue, itemArray);
+    this.backend = Backend.getInstance();
+    this.backend.setWalletValue(this.walletValue);
+    this.backend.setItemArray(itemArray);
     this.currentItem = this.backend.getStartingInfo().newItem;
     this.wallet = 'R' + this.walletValue;
   }
