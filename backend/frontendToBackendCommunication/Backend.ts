@@ -1,6 +1,11 @@
 import {Item} from "../SharedClasses/Item";
+import { Decision } from "../SharedClasses/Decision";
+import {SessionDataObject} from "../SessionDataObject/SessionDataObject";
+import { PlayerInfo } from "../SharedClasses/PlayerInfo";
 
 export class Backend {
+    private m_sessionDataObject: SessionDataObject;
+
     private m_walletValue: number;
     private m_itemList: Item[];
     private m_itemListIndex: number;
@@ -23,9 +28,18 @@ export class Backend {
             this.m_walletValue -= newItem.value;
         }
 
-        //TODO: Allow the make decision function to add a decision to a sessionData obj.
+        let decisionObject = new Decision(newItem, decision, this.m_walletValue);
+        this.m_sessionDataObject.addDecision(decisionObject);
 
         return {newWalletValue: this.m_walletValue, newItem: newItem}
+    }
+
+    getSessionDecisions(): Decision[] {
+        return this.m_sessionDataObject.getDecisionList();
+    }
+
+    sendBasicPlayerInfo(playerInfo: PlayerInfo): void {
+        this.m_sessionDataObject.addPlayerInfo(playerInfo);
     }
 
     getStartingInfo() {
