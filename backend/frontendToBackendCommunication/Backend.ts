@@ -45,4 +45,8 @@ export class Backend {
     getStartingInfo() {
         return {newWalletValue: this.m_walletValue, newItem: this.m_itemList[0]}
     }
+
+    saveToDataBase(): void {
+
+    }
 }

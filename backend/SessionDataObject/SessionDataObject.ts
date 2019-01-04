@@ -18,6 +18,7 @@ export class SessionDataObject {
     }
 
     getJSON(): string {
+        console.log(JSON.stringify(this));
         return (JSON.stringify(this));
     }
 }

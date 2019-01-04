@@ -1,5 +1,5 @@
 // Initialize Firebase
-var firebase = require("firebase")
+var firebase = require("firebase");
 var config = {
     apiKey: "AIzaSyAwvzrWXBm656-Ai-dgoscw1hrVGql6K5M",
     authDomain: "social-tech-a4b81.firebaseapp.com",
@@ -11,7 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
 function writeUserData(name, number, email, userId) {
-    var d = new Date()
+    var d = new Date();
     firebase.database().ref('Users/' + userId).set({
         fullName: name,
         email: email,
@@ -20,4 +20,4 @@ function writeUserData(name, number, email, userId) {
     });
 }
 
-writeUserData("Leonard", "I dunno", "I dunno either", 3)
+writeUserData("Leonard", "I dunno", "I dunno either", 3);
