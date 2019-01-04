@@ -14,6 +14,7 @@ export class PagesGamepageComponent implements OnInit {
   ngOnInit() {
   }
 
+
   buyFunction() {}
   dontBuyFunction() {}
 }
