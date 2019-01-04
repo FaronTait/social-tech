@@ -33,6 +33,11 @@ export class Backend {
     }
 
     makeDecision(decision: boolean) {
+        if (this.m_itemListIndex < this.m_itemList.length) {
+            let decisionObject = new Decision(this.m_itemList[this.m_itemListIndex], decision, this.m_walletValue);
+            this.m_sessionDataObject.addDecision(decisionObject);
+        }
+
         this.m_itemListIndex += 1;
         if (this.m_itemListIndex >= this.m_itemList.length) {
             //TODO: Decide what the best behavior would be for when the end of a the item list is reached
@@ -43,9 +48,6 @@ export class Backend {
         if (decision) {
             this.m_walletValue -= newItem.value;
         }
-
-        let decisionObject = new Decision(newItem, decision, this.m_walletValue);
-        this.m_sessionDataObject.addDecision(decisionObject);
 
         return {newWalletValue: this.m_walletValue, newItem: newItem}
     }
