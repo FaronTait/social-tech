@@ -14,3 +14,5 @@ for (let i = 0; i < 10; i++) {
      console.log("Wallet value: " + newInfo.newWalletValue.toString() + " Item name: " + newInfo.newItem.name + " Item value: " + newInfo.newItem.value.toString());
      newInfo = testBackend.makeDecision(i % 2 == 1)
  }
+
+ testBackend.getSessionDecisions();
