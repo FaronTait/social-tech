@@ -1,20 +1,71 @@
-.start-button1 {
+.sign-up-form {
   border: none;
   position: absolute;
   top: 0;
-  left: 42%;
-  margin-top: 450px;
+  right: 46%;
+  margin-top: 150px;
+  width: 200px
+}
+
+.signheading {
+  font-family: "Comic Sans MS";
+  color: #F5A835;
+  font-size: 3em;
+  position: absolute;
+}
+
+.signinform {
+  margin-top: 150px;
+}
+
+.input-container {
+  position: relative;
+  color: #78909C;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  /*left: 10%;*/
+}
+
+.start-button1 {
+  background-color: #F5A835;
+  margin: 30px;
+  color: #ECF0F1;
+  padding: 10px 62px;
+  border-radius: 6px;
+  position: absolute;
+  top: 70%;
+  left: 30%;
 }
 
 .start-button2 {
-  border: none;
+  background-color: #F5A835;
+  margin: 30px;
+  color: #ECF0F1;
+  padding: 10px 62px;
+  border-radius: 6px;
   position: absolute;
-  top: 0;
-  right: 42%;
-  margin-top: 450px;
+  top: 70%;
+  left: 52%;
 }
 
-/*.game-box {*/
-    /*border: dotted;*/
-    /*position: relative;*/
-/*}*/
+.input {
+  margin: 5px;
+  border-radius: 2px;
+}
+
+svg {
+  width: 80px;
+  height: 80px;
+}
+
+.wallet {
+  font-family: "Comic Sans MS";
+  color: #F5A835;
+  font-size: 3.2em;
+  position: absolute;
+  top: 10%;
+  right:25%;
+  width: 40%;
+  margin: auto;
+}

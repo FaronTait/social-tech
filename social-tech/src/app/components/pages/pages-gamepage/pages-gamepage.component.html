@@ -4,10 +4,20 @@
     <div class="tile bottom-shadow">
       <div class="tile-body">
         <img src="https://i.ibb.co/DR5YwJ3/pmskillshouse-logo-new.png" alt="pmskillshouse-logo-new" border="0" class="center"/>
+        <div class="full-width">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-6 offset-lg-6">
+                <div class="tile-body sign-up-form">
+                  <svg><use xlink:href="#wallet"></use></svg><h1 class="wallet">{{wallet}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="game-box">
-          <h1 class="budHeading">{{wallet}}</h1>
-          <button class="start-button1" (click)="buyFunction()">Buy</button>
-          <button class="start-button2" (click)="dontBuyFunction()">Don't Buy</button>
+          <button class="start-button1" (click)="buyFunction()"><svg><use xlink:href="#cash-in-hand"></use></svg></button>
+          <button class="start-button2" (click)="dontBuyFunction()"><svg><use xlink:href="#cash-in-hand-x"></use></svg></button>
         </div>
       </div>
     </div>
