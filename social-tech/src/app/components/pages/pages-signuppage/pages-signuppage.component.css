@@ -1,0 +1,42 @@
+.sign-up-form {
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 46%;
+    margin-top: 150px;
+    width: 200px
+}
+
+.signheading {
+    font-family: "Comic Sans MS";
+    color: #F5A835;
+    font-size: 3em;
+    position: absolute;
+}
+
+.signinform {
+    margin-top: 150px;
+}
+
+.input-container {
+    position: relative;
+    color: #78909C;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+    /*left: 10%;*/
+}
+
+button {
+    background-color: #F5A835;
+    margin: 30px;
+    font-size: 30px;
+    color: #ECF0F1;
+    padding: 15px 32px;
+    border-radius: 6px;
+}
+
+.input {
+    margin: 5px;
+    border-radius: 2px;
+}

@@ -13,33 +13,3 @@
     </div>
   </div>
 </div>
-<div class="tile-body">
-  <h3>Sign in</h3>
-  <h4>Access your account.</h4>
-  <div class="tile-result-container">{{resultMessage}}</div>
-  <form name="signin">
-    <div class="input-container">
-      <input type="email" formControlName="email" name="email" placeholder="Email">
-      <div class="input-error">
-        A valid email address is required.
-      </div>
-      <div class="input-icon">
-        <svg><use xlink:href="#email-icon"></use></svg>
-      </div>
-    </div>
-    <div class="input-container">
-      <input type="password" formControlName="password" name="password" placeholder="Password">
-      <div class="input-error">
-        Your password is required.
-      </div>
-      <div class="input-icon">
-        <svg><use xlink:href="#password-icon"></use></svg>
-      </div>
-    </div>
-    <div class="small-text-container">
-      <div class="small-text"><a routerLink="/reset">Forgot Password?</a></div>
-      <div class="small-text"><a routerLink="/signup">Don't have an account yet?</a></div>
-    </div>
-    <button type="submit">Sign In</button>
-  </form>
-</div>
