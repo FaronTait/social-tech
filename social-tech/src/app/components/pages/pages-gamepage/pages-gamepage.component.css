@@ -70,7 +70,7 @@ svg {
   color: #F5A835;
   font-size: 3.2em;
   position: absolute;
-  top: 15%;
+  top: 6%;
   left: 80%;
   width: 40%;
   margin: auto;
@@ -82,4 +82,8 @@ svg {
   width: 600px;
   padding: 25px;
   /*margin: 25px;*/
+}
+
+.productdiv {
+
 }
