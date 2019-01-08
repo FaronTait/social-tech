@@ -100,3 +100,14 @@ svg {
   display: inline-block;
   float: right;
 }
+
+.game-title {
+  padding: 30px;
+  font-size: 1.3em;
+  font-family: 'Roboto', sans-serif;
+  color: #607D8B;
+  font-weight: 400;
+}
+
+
+
