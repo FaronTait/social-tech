@@ -1,10 +1,8 @@
 .sign-up-form {
-  border: none;
   position: absolute;
   top: 0;
   right: 50%;
   margin-top: 150px;
-  width: 200px
 }
 
 .signheading, .boxheading {
@@ -41,7 +39,7 @@
   padding: 10px 62px;
   border-radius: 6px;
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 30%;
 }
 
@@ -52,7 +50,7 @@
   padding: 10px 62px;
   border-radius: 6px;
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 52%;
 }
 
@@ -62,14 +60,16 @@
 }
 
 svg {
-   width: 80px;
-   height: 80px;
+   width: 50px;
+   height: 50px;
 }
 
 .walletsvg {
-  width: 100%;
-  height: 100%;
-  margin-right: 50px;
+  position: relative;
+  /*left: 30%;*/
+  width: 200px;
+  height: 200px;
+
 }
 
 .wallet {
@@ -77,10 +77,10 @@ svg {
   color: #F5A835;
   font-size: 3.2em;
   position: absolute;
-  top: 7%;
-  left: 80%;
-  width: 40%;
-  margin: auto;
+  top: 20%;
+  left: 50%;
+  /*width: 40%;*/
+  /*margin: auto;*/
 }
 
 .productbox {
@@ -88,7 +88,8 @@ svg {
   background-color: #F5A835;
   border-radius: 6px;
   width: 300px;
-  padding: 25px;
+  padding: 15px;
+  top: 70%;
  }
 
 .productsvg1 {
@@ -99,6 +100,7 @@ svg {
 .price {
   display: inline-block;
   float: right;
+  color: #ECF0F1;
 }
 
 .game-title {
