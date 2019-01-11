@@ -6,11 +6,11 @@ export class Item {
     public priority: string;
     public id: string;
 
-    constructor (name: string, value: number,  id: string, svg: string, prioroty: string) {
+    constructor (name: string, value: number,  id: string, svg: string, priority: string) {
         this.value = value;
         this.name = name;
         this.svg = svg;
-        this.priority = prioroty;
+        this.priority = priority;
         this.id = id;
     }
 }
