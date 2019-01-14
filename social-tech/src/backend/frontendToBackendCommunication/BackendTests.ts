@@ -4,7 +4,7 @@ import {Item} from "../SharedClasses/Item";
 let itemArray: Item[] = [];
 
 for (let i = 0; i < 10; i++) {
-    itemArray[i] = new Item('I is Item ' + i.toString(), 10 + i * 10, 'temp-id', 'tmp-svg', 'tmp-prioroty');
+    itemArray[i] = new Item('I is Item ' + i.toString(), 10 + i * 10, 'temp-id', 'tmp-prioroty');
 }
 
  let testBackend = Backend.getInstance();

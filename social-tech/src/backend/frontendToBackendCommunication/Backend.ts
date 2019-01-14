@@ -42,7 +42,7 @@ export class Backend {
         if (this.m_itemListIndex >= this.m_itemList.length) {
             //TODO: Decide what the best behavior would be for when the end of a the item list is reached
             console.log("The end of the item list has been reached");
-            return null
+            return null;
         }
         let newItem = this.m_itemList[this.m_itemListIndex];
         if (decision) {
