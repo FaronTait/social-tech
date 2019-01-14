@@ -10,11 +10,11 @@
             <svg class="walletsvg"><use xlink:href="#wallet"></use></svg>
             <div class="productbox row">
               <div class="column">
-                <h1 class="boxheading">Luxury House</h1>
+                <h1 class="boxheading">{{ currentItem.name }}</h1>
                 <div>
                   <svg class="productsvg1"><use xlink:href="#luxury-house"></use></svg>
                   <svg class="productsvg2"><use xlink:href="#cash"></use></svg>
-                  <h2 class="price">R200</h2>
+                  <h2 class="price">{{ "R" + currentItem.value }}</h2>
                 </div>
               </div>
             </div>

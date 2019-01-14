@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Backend} from "../../../../backend/frontendToBackendCommunication/Backend";
 import {Item} from "../../../../backend/SharedClasses/Item";
+import {ITEM_LIST} from "../../../../assets/items"
 
 @Component({
   selector: 'app-pages-gamepage',
@@ -16,15 +17,10 @@ export class PagesGamepageComponent implements OnInit {
 
   constructor() {
     this.walletValue = 1000;
-    let itemArray: Item[] = [];
-
-    for (let i = 0; i < 10; i++) {
-      itemArray[i] = new Item('I is Item ' + i.toString(), 10 + i * 10, 'temp-id', 'tmp-svg', 'tmp-prioroty');
-    }
 
     this.backend = Backend.getInstance();
     this.backend.setWalletValue(this.walletValue);
-    this.backend.setItemArray(itemArray);
+    this.backend.setItemArray(ITEM_LIST.items);
     this.currentItem = this.backend.getStartingInfo().newItem;
     this.wallet = 'R' + this.walletValue;
   }
