@@ -12,7 +12,9 @@
               <div class="column">
                 <h1 class="boxheading">{{ currentItem.name }}</h1>
                 <div>
-                  <svg class="productsvg1"><use xlink:href="#luxury-house"></use></svg>
+                  <svg class="productsvg1" data-ng-class="currentItem.id">
+                      <use [attr.xlink:href]="'#' + currentItem.id"></use>
+                  </svg>
                   <svg class="productsvg2"><use xlink:href="#cash"></use></svg>
                   <h2 class="price">{{ "R" + currentItem.value }}</h2>
                 </div>
