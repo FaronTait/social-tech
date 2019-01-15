@@ -7,11 +7,13 @@ import {BackendService} from '../../../backend.service';
   templateUrl: './pages-endgamepage.component.html',
   styleUrls: ['./pages-endgamepage.component.css']
 })
+
 export class PagesEndgamepageComponent implements OnInit {
   backend: BackendService;
 
   constructor(backendService: BackendService) {
     this.backend = backendService;
+
   }
 
   ngOnInit() {
