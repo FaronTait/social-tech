@@ -1,26 +1,20 @@
-import {Item} from "../SharedClasses/Item";
-import { Decision } from "../SharedClasses/Decision";
-import {SessionDataObject} from "../SessionDataObject/SessionDataObject";
-import { PlayerInfo } from "../SharedClasses/PlayerInfo";
+import {Item} from '../SharedClasses/Item';
+import { Decision } from '../SharedClasses/Decision';
+import {SessionDataObject} from '../SessionDataObject/SessionDataObject';
+import { PlayerInfo } from '../SharedClasses/PlayerInfo';
+import {DataBaseService} from '../../app/data-base.service';
 
 export class Backend {
     private m_sessionDataObject: SessionDataObject;
     private m_walletValue: number;
     private m_itemList: Item[];
     private m_itemListIndex: number;
+    private m_dataBaseService;
 
-    private static m_instance: Backend = null;
-
-    private constructor() {
+    public constructor(dataBaseService: DataBaseService) {
         this.m_sessionDataObject = new SessionDataObject();
         this.m_itemListIndex = 0;
-    }
-
-    static getInstance(): Backend {
-        if (Backend.m_instance == null) {
-            Backend.m_instance = new Backend()
-        }
-        return Backend.m_instance;
+        this.m_dataBaseService = dataBaseService;
     }
 
     setItemArray(items: Item[]) {
@@ -34,25 +28,25 @@ export class Backend {
 
     makeDecision(decision: boolean) {
         if (this.m_itemListIndex < this.m_itemList.length) {
-            let decisionObject = new Decision(this.m_itemList[this.m_itemListIndex], decision, this.m_walletValue);
+            const decisionObject = new Decision(this.m_itemList[this.m_itemListIndex], decision, this.m_walletValue);
             this.m_sessionDataObject.addDecision(decisionObject);
         }
 
         this.m_itemListIndex += 1;
         if (this.m_itemListIndex >= this.m_itemList.length) {
-            //TODO: Decide what the best behavior would be for when the end of a the item list is reached
-            console.log("The end of the item list has been reached");
+            console.log('The end of the item list has been reached');
             return null;
         }
-        let newItem = this.m_itemList[this.m_itemListIndex];
+        const newItem = this.m_itemList[this.m_itemListIndex];
         if (decision) {
             this.m_walletValue -= newItem.value;
         }
 
-        return {newWalletValue: this.m_walletValue, newItem: newItem}
+        return {newWalletValue: this.m_walletValue, newItem: newItem};
     }
 
     getSessionDecisions(): Decision[] {
+        this.m_dataBaseService.saveSessionData(this.m_sessionDataObject.getJSON());
         return this.m_sessionDataObject.getDecisionList();
     }
 
@@ -61,6 +55,6 @@ export class Backend {
     }
 
     getStartingInfo() {
-        return {newWalletValue: this.m_walletValue, newItem: this.m_itemList[0]}
+        return {newWalletValue: this.m_walletValue, newItem: this.m_itemList[0]};
     }
 }

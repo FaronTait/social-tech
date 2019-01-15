@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Backend} from "../../../../backend/frontendToBackendCommunication/Backend";
-import {Item} from "../../../../backend/SharedClasses/Item";
-import {ITEM_LIST} from "../../../../assets/items"
-import {Router} from "@angular/router";
+import {Item} from '../../../../backend/SharedClasses/Item';
+import {ITEM_LIST} from '../../../../assets/items';
+import {Router} from '@angular/router';
+import {BackendService} from '../../../backend.service';
 
 @Component({
   selector: 'app-pages-gamepage',
@@ -14,14 +14,14 @@ export class PagesGamepageComponent implements OnInit {
   walletValue: number;
   wallet: String;
   currentItem: Item;
-  backend: Backend;
+  backend: BackendService;
   routerLinkStatus: String;
   router: Router;
 
-  constructor(router: Router) {
+  constructor(router: Router, backendService: BackendService) {
     this.walletValue = 1000;
 
-    this.backend = Backend.getInstance();
+    this.backend = backendService;
     this.backend.setWalletValue(this.walletValue);
     this.backend.setItemArray(ITEM_LIST.items);
     this.currentItem = this.backend.getStartingInfo().newItem;
@@ -35,20 +35,22 @@ export class PagesGamepageComponent implements OnInit {
 
 
   buyFunction() {
-    let newInfo = this.backend.makeDecision(true);
+    const newInfo = this.backend.makeDecision(true);
     if (newInfo == null) {
-      this.router.navigateByUrl("/endgamepage");
+      this.router.navigateByUrl('/endgamepage');
+    } else {
+      this.walletValue = newInfo.newWalletValue;
+      this.currentItem = newInfo.newItem;
+      this.wallet = 'R' + this.walletValue;
     }
-    this.walletValue = newInfo.newWalletValue;
-    this.currentItem = newInfo.newItem;
-    this.wallet = 'R' + this.walletValue;
   }
 
   dontBuyFunction() {
-    let newInfo = this.backend.makeDecision(false);
+    const newInfo = this.backend.makeDecision(false);
     if (newInfo == null) {
-      this.router.navigateByUrl("/endgamepage");
+      this.router.navigateByUrl('/endgamepage');
+    } else {
+      this.currentItem = newInfo.newItem;
     }
-    this.currentItem = newInfo.newItem;
   }
 }

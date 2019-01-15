@@ -1,5 +1,5 @@
-import {PlayerInfo} from "../SharedClasses/PlayerInfo";
-import {Decision} from "../SharedClasses/Decision";
+import {PlayerInfo} from '../SharedClasses/PlayerInfo';
+import {Decision} from '../SharedClasses/Decision';
 
 export class SessionDataObject {
     private m_playerInfo: PlayerInfo;
