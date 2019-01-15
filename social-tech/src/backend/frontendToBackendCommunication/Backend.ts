@@ -30,6 +30,9 @@ export class Backend {
         if (this.m_itemListIndex < this.m_itemList.length) {
             const decisionObject = new Decision(this.m_itemList[this.m_itemListIndex], decision, this.m_walletValue);
             this.m_sessionDataObject.addDecision(decisionObject);
+            if (decision) {
+                this.m_walletValue -= this.m_itemList[this.m_itemListIndex].value;
+            }
         }
 
         this.m_itemListIndex += 1;
@@ -37,9 +40,6 @@ export class Backend {
             return null;
         }
         const newItem = this.m_itemList[this.m_itemListIndex];
-        if (decision) {
-            this.m_walletValue -= newItem.value;
-        }
 
         return {newWalletValue: this.m_walletValue, newItem: newItem};
     }
