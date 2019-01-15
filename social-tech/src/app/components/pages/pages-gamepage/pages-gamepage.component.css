@@ -1,115 +1,33 @@
-/*.sign-up-form {*/
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*right: 50%;*/
-  /*margin-top: 150px;*/
-/*}*/
+.start-button1 {
+background-color: #F5A835;
+margin: 30px;
+padding: 0px 50px 0px 50px;
+border-radius: 6px;
+}
 
-/*.signheading, .boxheading {*/
-  /*font-family: "Comic Sans MS";*/
-  /*color: #F5A835;*/
-  /*font-size: 3em;*/
-  /*position: absolute;*/
-/*}*/
+.start-button2 {
+background-color: #F5A835;
+  padding: 0px 50px 0px 50px;
+border-radius: 6px;
+}
 
-/*.boxheading {*/
-  /*font-family: "Comic Sans MS";*/
-  /*color: #ECF0F1;*/
-  /*font-size: 1em;*/
-  /*position: relative;*/
-/*}*/
+svg {
+   height: 150px;
+}
 
-/*.signinform {*/
-  /*margin-top: 150px;*/
-/*}*/
+.walletsvg {
+  position: relative;
+  width: 150px;
+}
 
-/*.input-container {*/
-  /*position: relative;*/
-  /*color: #78909C;*/
-  /*font-family: 'Open Sans', sans-serif;*/
-  /*font-weight: 100;*/
-  /*font-size: 1em;*/
-  /*!*left: 10%;*!*/
-/*}*/
-
-/*.start-button1 {*/
-  /*background-color: #F5A835;*/
-  /*margin: 30px;*/
-  /*color: #ECF0F1;*/
-  /*padding: 10px 62px;*/
-  /*border-radius: 6px;*/
-  /*position: absolute;*/
-  /*top: 80%;*/
-  /*left: 30%;*/
-/*}*/
-
-/*.start-button2 {*/
-  /*background-color: #F5A835;*/
-  /*margin: 30px;*/
-  /*color: #ECF0F1;*/
-  /*padding: 10px 62px;*/
-  /*border-radius: 6px;*/
-  /*position: absolute;*/
-  /*top: 80%;*/
-  /*left: 52%;*/
-/*}*/
-
-/*.input {*/
-  /*margin: 5px;*/
-  /*border-radius: 2px;*/
-/*}*/
-
-/*svg {*/
-   /*width: 50px;*/
-   /*height: 50px;*/
-/*}*/
-
-/*.walletsvg {*/
-  /*position: relative;*/
-  /*!*left: 30%;*!*/
-  /*width: 200px;*/
-  /*height: 200px;*/
-
-/*}*/
-
-/*.wallet {*/
-  /*font-family: "Comic Sans MS";*/
-  /*color: #F5A835;*/
-  /*font-size: 3.2em;*/
-  /*position: absolute;*/
-  /*top: 20%;*/
-  /*left: 50%;*/
-  /*!*width: 40%;*!*/
-  /*!*margin: auto;*!*/
-/*}*/
-
-/*.productbox {*/
-  /*position: absolute;*/
-  /*background-color: #F5A835;*/
-  /*border-radius: 6px;*/
-  /*width: 300px;*/
-  /*padding: 15px;*/
-  /*top: 70%;*/
- /*}*/
-
-/*.productsvg1 {*/
-  /*width: 100%;*/
-  /*height: 100%;*/
-/*}*/
-
-/*.price {*/
-  /*display: inline-block;*/
-  /*float: right;*/
-  /*color: #ECF0F1;*/
-/*}*/
-
-/*.game-title {*/
-  /*padding: 30px;*/
-  /*font-size: 1.3em;*/
-  /*font-family: 'Roboto', sans-serif;*/
-  /*color: #607D8B;*/
-  /*font-weight: 400;*/
-/*}*/
+.wallet {
+  font-family: "Comic Sans MS";
+  color: #F5A835;
+  font-size: 2.5em;
+  display: inline-block;
+  position: relative;
+  bottom: 95px;
+}
 
 .start-button {
   border: none;
@@ -118,7 +36,7 @@
 
 .content-1170
 {
-  width: 1170px;
+  width: 950px;
 }
 
 .content-1170 img
@@ -171,12 +89,13 @@ h1.big-title
 .title-desc
 {
   font-family: 'Comic Sans MS', serif;
-  font-size: 30px;
+  font-size: 50px;
   line-height: 26px;
-  max-width: 333px;
+  max-width: 633px;
   margin: 0 auto;
   color: #eb9841;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+  padding-top: 30px;
 }
 
 .page-template-page-home .intro-page footer
@@ -220,12 +139,11 @@ h1.big-title
 
   .title-desc
   {
-    font-size: 19px;
+    font-size: 30px;
     line-height: 23px;
   }
 
 }
-
 
 .center-relative
 {
