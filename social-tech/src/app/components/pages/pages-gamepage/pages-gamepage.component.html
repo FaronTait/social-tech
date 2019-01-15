@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="block content-1170 center-relative center-text">
-    <button class="start-button1" (click)="buyFunction()"><svg style="width: 80px"><use xlink:href="#cash-in-hand"></use></svg></button>
+    <button class="start-button1" [disabled]="!canBuy" (click)="buyFunction()"><svg style="width: 80px"><use xlink:href="#cash-in-hand"></use></svg></button>
     <button class="start-button2" (click)="dontBuyFunction()"><svg style="width: 80px"><use xlink:href="#cash-in-hand-x"></use></svg></button>
   </div>
 </div>

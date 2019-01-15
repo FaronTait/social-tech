@@ -18,15 +18,19 @@ export class PagesGamepageComponent implements OnInit {
   routerLinkStatus: String;
   router: Router;
 
+  canBuy: boolean;
+
   constructor(router: Router, backendService: BackendService) {
     this.walletValue = 1000;
 
     this.backend = backendService;
-    this.backend.setWalletValue(this.walletValue);
     this.backend.setItemArray(ITEM_LIST.items);
+    this.backend.setWalletValue(this.walletValue);
     this.currentItem = this.backend.getStartingInfo().newItem;
+
+    this.canBuyCheck();
+
     this.wallet = 'R' + this.walletValue;
-    this.routerLinkStatus = 'inactive';
     this.router = router;
   }
 
@@ -42,6 +46,8 @@ export class PagesGamepageComponent implements OnInit {
       this.walletValue = newInfo.newWalletValue;
       this.currentItem = newInfo.newItem;
       this.wallet = 'R' + this.walletValue;
+
+      this.canBuyCheck();
     }
   }
 
@@ -51,6 +57,12 @@ export class PagesGamepageComponent implements OnInit {
       this.router.navigateByUrl('/endgamepage');
     } else {
       this.currentItem = newInfo.newItem;
+
+      this.canBuyCheck();
     }
+  }
+
+  private canBuyCheck() {
+    this.canBuy = this.walletValue >= this.currentItem.value;
   }
 }

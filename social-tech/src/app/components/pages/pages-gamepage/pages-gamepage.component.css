@@ -5,6 +5,10 @@ padding: 0px 50px 0px 50px;
 border-radius: 6px;
 }
 
+.start-button1:disabled {
+  background-color: #b8b894;
+}
+
 .start-button2 {
 background-color: #F5A835;
   padding: 0px 50px 0px 50px;
