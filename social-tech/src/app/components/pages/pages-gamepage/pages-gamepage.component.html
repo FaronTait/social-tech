@@ -1,44 +1,22 @@
 <div id="home" class="section intro-page">
   <div class="block content-1170 center-relative center-text">
-    <img class="top-logo" src="https://i.ibb.co/DR5YwJ3/pmskillshouse-logo-new.png" alt="Boxus" />
-    <br>
     <p class="title-desc">Budget Priority</p>
   </div>
   <div class="block content-1170 center-relative center-text">
-    <svg class="walletsvg"><use xlink:href="#wallet"></use></svg>
-    <h1 class="wallet">{{wallet}}</h1>
+    <svg class="walletsvg"><use xlink:href="#wallet"></use></svg><h1 class="wallet">{{wallet}}</h1>
   </div>
-</div>
-
-
-<div class="page-container d-flex align-items-center">
-  <div class="full-width">
-    <div class="tile bottom-shadow">
-      <div class="tile-body">
-        <img src="https://i.ibb.co/DR5YwJ3/pmskillshouse-logo-new.png" alt="pmskillshouse-logo-new" border="0" class="center"/>
-        <div class="full-width">
-          <h1 class="wallet">{{wallet}}</h1>
-          <div class="tile-body sign-up-form">
-            <svg class="walletsvg"><use xlink:href="#wallet"></use></svg>
-            <div class="productbox row">
-              <div class="column">
-                <h1 class="boxheading">{{ currentItem.name }}</h1>
-                <div>
-                  <svg class="productsvg1" data-ng-class="currentItem.id">
-                      <use [attr.xlink:href]="'#' + currentItem.id"></use>
-                  </svg>
-                  <svg class="productsvg2"><use xlink:href="#cash"></use></svg>
-                  <h2 class="price">{{ "R" + currentItem.value }}</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="game-box">
-          <button class="start-button1" (click)="buyFunction()"><svg><use xlink:href="#cash-in-hand"></use></svg></button>
-          <button class="start-button2" (click)="dontBuyFunction()"><svg><use xlink:href="#cash-in-hand-x"></use></svg></button>
-        </div>
-      </div>
+  <div class="block content-1170 center-relative center-text" style="background-color: #FFB74D; border-radius: 25px">
+    <h1 class="boxheading" style="color: #ECF0F1; margin-right: 350px; padding-top: 20px; font-size: 3em">{{ currentItem.name }}</h1>
+    <div>
+      <svg class="productsvg1"  data-ng-class="currentItem.id">
+        <use [attr.xlink:href]="'#' + currentItem.id"></use>
+      </svg>
+      <svg class="productsvg2"><use xlink:href="#cash"></use></svg>
+      <h2 class="price" style="color: #ECF0F1; margin-left: 300px; padding-bottom: 20px">{{ "R" + currentItem.value }}</h2>
     </div>
+  </div>
+  <div class="block content-1170 center-relative center-text">
+    <button class="start-button1" (click)="buyFunction()"><svg style="width: 80px"><use xlink:href="#cash-in-hand"></use></svg></button>
+    <button class="start-button2" (click)="dontBuyFunction()"><svg style="width: 80px"><use xlink:href="#cash-in-hand-x"></use></svg></button>
   </div>
 </div>
