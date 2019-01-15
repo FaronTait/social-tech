@@ -2,12 +2,10 @@
 
 export class PlayerInfo {
     public fullName: string;
-    public phoneNumber: number;
-    public emailAddress: string;
+    public contactDetail: string;
 
-    constructor(fullName: string, phoneNumber: number, emailAddress: string) {
+    constructor(fullName: string, contactDetail: string) {
         this.fullName = fullName;
-        this.phoneNumber = phoneNumber;
-        this.emailAddress = emailAddress;
+        this.contactDetail = contactDetail;
     }
 }

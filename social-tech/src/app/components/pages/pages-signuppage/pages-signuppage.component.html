@@ -10,14 +10,16 @@
               <div class="col-12 col-lg-6 offset-lg-6">
                 <div class="tile-body sign-up-form">
                   <h3 class="signheading">Sign Up</h3>
-                  <form name="signin" class="signinform">
+                  <form class="signinform">
                     <div class="input-container">
-                      <input type="fullname" formControlName="fullname" name="fullname" placeholder="Full Name" class="input">
+                      <input type="text" placeholder="Full Name" class="input" id="fullName"
+                             [(ngModel)]="person.fullName" name="Full Name">
                       <div class="input-container">
-                        <input type="email" formControlName="email" name="email" placeholder="Email / Phone Numer" class="input">
+                        <input type="text" placeholder="Email / Phone Numer" class="input" id="contactInfo"
+                               [(ngModel)]="person.contactDetails" name="Contact Info">
                       </div>
                     </div>
-                    <button type="submit" href="gamepage">Begin</button>
+                    <button type="submit" (click)="submitAndStartGame()">Begin</button>
                   </form>
                 </div>
               </div>
