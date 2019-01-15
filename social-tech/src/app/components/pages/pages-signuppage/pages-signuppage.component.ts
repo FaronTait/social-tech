@@ -18,7 +18,6 @@ export class PagesSignuppageComponent implements OnInit {
 
 
   submitAndStartGame() {
-    event.preventDefault();
     const playerInfo = new PlayerInfo(this.person.fullName, this.person.contactDetails);
     this.backend.sendBasicPlayerInfo(playerInfo);
     this.router.navigateByUrl('/gamepage');
