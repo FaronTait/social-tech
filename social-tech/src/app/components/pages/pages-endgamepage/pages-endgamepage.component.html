@@ -6,20 +6,18 @@
 
     <table>
       <tr>
-        <th>Wallet Value</th>
+        <th>Wallet</th>
         <th>Item</th>
-        <th>Cost</th>
         <th>Buy / Not Buy</th>
         <th>Need / Want</th>
       </tr>
       <tr *ngFor="let decision of decisionList">
         <td>R{{ decision.walletValueAtThatTime }}</td>
-        <td>{{ decision.item.name }}</td>
-        <td>R {{ decision.item.value }}</td>
+        <td>{{ decision.item.name }} - R{{ decision.item.value }}</td>
         <td>{{ decision.wasBought ? "Purchased" : "Not Purchased" }}</td>
         <td>{{ decision.item.priority }}</td>
       </tr>
     </table>
-    <a href="homepage"><svg class="walletsvg"><use xlink:href="#redo"></use></svg></a>
+    <a href="homepage"><svg class="redosvg"><use xlink:href="#redo"></use></svg></a>
   </div>
 </div>
