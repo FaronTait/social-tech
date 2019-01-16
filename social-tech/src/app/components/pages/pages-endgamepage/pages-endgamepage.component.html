@@ -13,10 +13,10 @@
         <th>Need / Want</th>
       </tr>
       <tr *ngFor="let decision of decisionList">
-        <td>{{ decision.walletValueAtThatTime }}</td>
+        <td>R{{ decision.walletValueAtThatTime }}</td>
         <td>{{ decision.item.name }}</td>
         <td>R {{ decision.item.value }}</td>
-        <td>{{ decision.wasBought }}</td>
+        <td>{{ decision.wasBought ? "Purchased" : "Not Purchased" }}</td>
         <td>{{ decision.item.priority }}</td>
       </tr>
     </table>
