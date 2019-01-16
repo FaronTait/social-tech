@@ -53,11 +53,11 @@ export class PagesGamepageComponent implements OnInit {
 
   dontBuyFunction() {
     const newInfo = this.backend.makeDecision(false);
+
     if (newInfo == null) {
       this.router.navigateByUrl('/endgamepage');
     } else {
       this.currentItem = newInfo.newItem;
-
       this.canBuyCheck();
     }
   }
