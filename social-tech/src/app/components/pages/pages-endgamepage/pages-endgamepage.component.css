@@ -178,3 +178,11 @@ tr:nth-child(even) {
 .redosvg {
     padding: 30px;
 }
+
+.largeWidth {
+    color: green;
+}
+
+.smallWidth {
+    color: red;
+}

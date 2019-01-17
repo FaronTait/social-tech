@@ -158,3 +158,9 @@ h1.big-title
 {
   text-align: center !important;
 }
+
+.voice {
+  height: 50px;
+  width: 50px;
+  padding-right: 280px;
+}
