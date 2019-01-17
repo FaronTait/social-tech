@@ -1,3 +1,3 @@
 npm install -g @compodoc/compodoc;
 mkdir docs;
-compodoc social-tech/src -d ./docs -s -p social-tech/tsconfig.json;
+compodoc social-tech/src -e -d ./docs -p social-tech/tsconfig.json;
