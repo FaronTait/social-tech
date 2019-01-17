@@ -10,9 +10,10 @@ import {PlayerInfo} from '../backend/SharedClasses/PlayerInfo';
 })
 export class BackendService {
   private backend: Backend;
+  private dataBaseService: DataBaseService;
 
   constructor(dataBaseService: DataBaseService) {
-    this.backend = new Backend(dataBaseService);
+    this.dataBaseService = dataBaseService;
   }
 
   public setWalletValue(walletValue: number) {
@@ -37,5 +38,9 @@ export class BackendService {
 
   public getStartingInfo() {
     return this.backend.getStartingInfo();
+  }
+
+  public restartBackend() {
+    this.backend = new Backend(this.dataBaseService);
   }
 }
