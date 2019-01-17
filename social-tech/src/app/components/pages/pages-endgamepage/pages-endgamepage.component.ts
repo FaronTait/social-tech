@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Backend} from '../../../../backend/frontendToBackendCommunication/Backend';
 import {BackendService} from '../../../backend.service';
-import {Item} from '../../../../backend/SharedClasses/Item';
-import {ITEM_LIST} from '../../../../assets/items';
 import {Decision} from '../../../../backend/SharedClasses/Decision';
 
 @Component({
@@ -14,12 +11,9 @@ import {Decision} from '../../../../backend/SharedClasses/Decision';
 export class PagesEndgamepageComponent implements OnInit {
   backend: BackendService;
   decisionList: Decision[];
-  // decisions: string;
 
   constructor(backendService: BackendService) {
     this.backend = backendService;
-      // this.title = Item;
-      // this.decisions = Item;
 
   }
 
