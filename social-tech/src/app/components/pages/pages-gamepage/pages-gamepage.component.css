@@ -3,6 +3,7 @@ background-color: #F5A835;
 margin: 30px;
 padding: 0px 50px 0px 50px;
 border-radius: 6px;
+  outline: none;
 }
 
 .start-button1:disabled {
@@ -13,6 +14,7 @@ border-radius: 6px;
 background-color: #F5A835;
   padding: 0px 50px 0px 50px;
 border-radius: 6px;
+  outline: none;
 }
 
 svg {

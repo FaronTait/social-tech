@@ -4,6 +4,7 @@ button {
     color: #ECF0F1;
     padding: 15px 32px;
     border-radius: 6px;
+    outline: none;
 }
 
 .start-button {
