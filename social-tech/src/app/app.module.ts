@@ -16,6 +16,8 @@ import { environment } from '../environments/environment';
 import {BackendService} from './backend.service';
 import {FormsModule} from '@angular/forms';
 
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,7 @@ import {FormsModule} from '@angular/forms';
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [DataBaseService, BackendService],
+  providers: [DataBaseService, BackendService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
