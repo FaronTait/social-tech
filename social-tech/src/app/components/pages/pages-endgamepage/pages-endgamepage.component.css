@@ -159,4 +159,22 @@ h1.big-title
     text-align: center !important;
 }
 
+table {
+    font-family: Roboto, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
+td, th {
+    border: 2px solid #eb9841;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #FFF3E0;
+}
+
+.redosvg {
+    padding: 30px;
+}
